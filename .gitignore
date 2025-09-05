@@ -1,7 +1,31 @@
-# Frontend
-frontend/node_modules/
+# Node
+node_modules/
+dist/
+.npm/
+npm-debug.log*
+yarn-error.log
+.pnp/
+.pnp.js
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
 frontend/dist/
-frontend/.npm/
+frontend/node_modules/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+frontend/coverage/
 
 # Backend Spring Boot
 **/*/target/
@@ -10,11 +34,3 @@ frontend/.npm/
 **/.project
 **/.classpath
 **/.settings/
-
-# IDE e Sistema Operacional
-.vscode/
-.idea/
-*.suo
-*.sln
-.DS_Store
-Thumbs.db
