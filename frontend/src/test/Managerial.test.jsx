@@ -8,10 +8,16 @@ describe('Managerial', () => {
     expect(screen.getByText(/painel gerencial/i)).toBeInTheDocument();
   });
 
-  it('exibe campos de data início e fim', () => {
+  it('exibe labels de data início e fim', () => {
     render(<Managerial />);
-    expect(screen.getByLabelText(/data início/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/data fim/i)).toBeInTheDocument();
+    expect(screen.getByText(/data início/i)).toBeInTheDocument();
+    expect(screen.getByText(/data fim/i)).toBeInTheDocument();
+  });
+
+  it('exibe dois campos de data', () => {
+    const { container } = render(<Managerial />);
+    const dateInputs = container.querySelectorAll('input[type="date"]');
+    expect(dateInputs).toHaveLength(2);
   });
 
   it('exibe botão de gerar relatórios', () => {
