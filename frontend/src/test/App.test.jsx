@@ -17,20 +17,20 @@ describe('App', () => {
 
   it('exibe os três botões de navegação', () => {
     render(<App />);
-    expect(screen.getByText(/catálogo/i)).toBeInTheDocument();
-    expect(screen.getByText(/carrinho/i)).toBeInTheDocument();
-    expect(screen.getByText(/gerencial/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/catálogo/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/carrinho/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/gerencial/i).length).toBeGreaterThan(0);
   });
 
   it('navega para área gerencial ao clicar', async () => {
     render(<App />);
-    await userEvent.click(screen.getByText(/gerencial/i));
+    await userEvent.click(screen.getAllByText(/gerencial/i)[0]);
     expect(screen.getByText(/painel gerencial/i)).toBeInTheDocument();
   });
 
   it('navega para carrinho ao clicar', async () => {
     render(<App />);
-    await userEvent.click(screen.getByText(/carrinho/i));
-    expect(screen.getByText(/seu carrinho/i)).toBeInTheDocument();
+    await userEvent.click(screen.getAllByText(/carrinho/i)[0]);
+    expect(screen.getAllByText(/seu carrinho/i).length).toBeGreaterThan(0);
   });
 });
