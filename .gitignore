@@ -1,0 +1,20 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.npm/
+
+# Backend Spring Boot
+**/*/target/
+**/*/bin/
+.mvn/wrapper/maven-wrapper.jar
+**/.project
+**/.classpath
+**/.settings/
+
+# IDE e Sistema Operacional
+.vscode/
+.idea/
+*.suo
+*.sln
+.DS_Store
+Thumbs.db
